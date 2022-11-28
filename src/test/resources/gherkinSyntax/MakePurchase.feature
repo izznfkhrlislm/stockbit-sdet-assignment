@@ -1,9 +1,9 @@
-Feature: As a user I want to fill the payment method information for my purchase
+Feature: As a user I want to buy something from the app and provide delivery and payment information
 
-  Background: Preconditions
+  Scenario: End-to-End Purchase
     Given I have successfully landed in Home Page, list of items has been showed
     When I tap on a product card named: 'Sauce Lab Back Packs'
-    Then I have successfully landed in Product Detail page with the desired product name
+    And I have successfully landed in Product Detail page with the desired product name
     And I set the product quantity to: 2
     And I set the product color to: 'Blue'
     And I click Add to Cart button
@@ -19,8 +19,11 @@ Feature: As a user I want to fill the payment method information for my purchase
     When I entered my personal data into the shipping form
     And I clicked to Payment button to proceed to payment page
     Then I have redirected to Payment page
-
-  Scenario: Filling Payment Information
-    Given I have redirected to Payment page
     When I filled the payment information with stored credentials data
     And I clicked on Review Order button
+    And I have redirected to Review Order page
+    When I have checked my delivery address information is correct
+    And I have checked my billing information is correct
+    And I have checked my total qty of shopping is correct
+    And I clicked on Place Order button
+    Then I should see the Checkout Complete message as the sign of purchase successfully made

@@ -22,6 +22,11 @@ public class PaymentFormPageSteps implements En {
             PaymentFormPage paymentFormPage = new PaymentFormPage(AppiumWrapper.getInstance().getDriver());
             paymentFormPage.waitForPageLoad();
 
+            stepsDataState.setUserFullName(USER_FULL_NAME);
+            stepsDataState.setCardNumber(CARD_NUMBER);
+            stepsDataState.setExpirationDate(EXPIRATION_DATE);
+            stepsDataState.setSecurityNumber(SECURITY_CODE);
+
             paymentFormPage.fillPaymentInformationForm(USER_FULL_NAME, CARD_NUMBER, EXPIRATION_DATE, SECURITY_CODE);
         });
 

@@ -25,6 +25,14 @@ public class ShippingAddressFormPageSteps implements En {
             ShippingAddressFormPage page = new ShippingAddressFormPage(AppiumWrapper.getInstance().getDriver());
             page.waitForPageLoad();
 
+            stepsDataState.setUserFullName(FULL_NAME);
+            stepsDataState.setAddressLine1(ADDRESS_LINE_1);
+            stepsDataState.setAddressLine2(ADDRESS_LINE_2);
+            stepsDataState.setCity(CITY);
+            stepsDataState.setState(STATE);
+            stepsDataState.setZip(ZIP_CODE);
+            stepsDataState.setCountry(COUNTRY);
+
             page.fillShippingAddressForm(FULL_NAME, ADDRESS_LINE_1, ADDRESS_LINE_2, CITY, STATE, ZIP_CODE, COUNTRY);
         });
 
