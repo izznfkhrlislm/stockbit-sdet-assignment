@@ -1,4 +1,4 @@
-Feature: As a user I want to proceed to Checkout after checking the details in Cart page
+Feature: As a user I want to log into the app to continue my purchase
 
   Background: Preconditions
     Given I have successfully landed in Home Page, list of items has been showed
@@ -10,9 +10,13 @@ Feature: As a user I want to proceed to Checkout after checking the details in C
     Then I should see the cart icon has a quantity balloon
     And I click the Cart Icon
     Then I have successfully landed in Cart page with the desired product already in there
-
-  Scenario: Check product information in Cart page and go to Checkout page
-    Given I have successfully landed in Cart page with the desired product already in there
+    And I have successfully landed in Cart page with the desired product already in there
     When I see that the product information is already correct
     And I click Proceed to Checkout button
-    Then I have successfully landed in Checkout page
+    Then I have redirected to Login page
+
+  Scenario: Insert Username and Password to log into the app to continue purchase
+    Given I have redirected to Login page
+    When I filled the username and password form with stored credentials data
+    And I clicked on Login button
+    Then I have redirected to Shipping Address form page to complete my purchase

@@ -48,6 +48,13 @@ public class CartPage {
         return productTitleTextView.stream().map(RemoteWebElement::getText).collect(Collectors.toList());
     }
 
+    public boolean isProductWithDesiredNameDisplayed(String desiredProductName) {
+        List<String> productName = getProductNames();
+        return productTitleTextView
+                .get(getProductNames().indexOf(desiredProductName))
+                .isDisplayed();
+    }
+
     public boolean isGoToCheckoutButtonElementDisplayed() {
         return goToCheckoutButton.isDisplayed();
     }

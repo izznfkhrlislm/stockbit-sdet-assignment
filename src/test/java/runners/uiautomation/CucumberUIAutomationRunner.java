@@ -6,7 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resource/gherkinSyntax"},
+        features = {
+                "src/test/resources/gherkinSyntax"},
         plugin = {"pretty", "json:target/UIAutomation.json", "junit:target/UIAutomation.xml"},
         glue = {"hooks", "appPageSteps", "runners.uiautomation"})
 public class CucumberUIAutomationRunner {
