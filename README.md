@@ -14,3 +14,9 @@ Tools used:
 
 **Notes:** you need to change the variable `APP_PATH` to the absolute path of the APK in `src/test/resources/testConfig.properties`
 
+#### Test 2: Backend HTTP Automation Testing
+Programming Language used:
+- Java 1.8
+- Maven (for dependency management)
+- Rest-Assured + JSON Schema Validator 5.2.0
+- JUnit Jupiter API 5.9.1

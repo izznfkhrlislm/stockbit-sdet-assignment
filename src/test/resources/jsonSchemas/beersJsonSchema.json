@@ -1,0 +1,453 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "name": {
+        "type": "string"
+      },
+      "tagline": {
+        "type": "string"
+      },
+      "first_brewed": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "abv": {
+        "type": [
+          "number",
+          "integer"
+        ]
+      },
+      "ibu": {
+        "type": [
+          "integer",
+          "null",
+          "number"
+        ]
+      },
+      "target_fg": {
+        "type": "integer",
+        "enum": [
+          1020,
+          1021,
+          1023,
+          1017,
+          1010,
+          1030,
+          1000,
+          1012,
+          1003,
+          1064,
+          1015,
+          1005,
+          1013,
+          1007,
+          1022,
+          1016
+        ]
+      },
+      "target_og": {
+        "type": [
+          "integer",
+          "number"
+        ]
+      },
+      "ebc": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "srm": {
+        "type": [
+          "integer",
+          "null",
+          "number"
+        ]
+      },
+      "ph": {
+        "type": [
+          "integer",
+          "number"
+        ]
+      },
+      "attenuation_level": {
+        "type": [
+          "number",
+          "integer"
+        ]
+      },
+      "volume": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "enum": [
+              20
+            ]
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "litres"
+            ]
+          }
+        },
+        "required": [
+          "value",
+          "unit"
+        ]
+      },
+      "boil_volume": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "enum": [
+              25
+            ]
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "litres"
+            ]
+          }
+        },
+        "required": [
+          "value",
+          "unit"
+        ]
+      },
+      "method": {
+        "type": "object",
+        "properties": {
+          "mash_temp": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "temp": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "integer",
+                      "enum": [
+                        69,
+                        65,
+                        67,
+                        68,
+                        60,
+                        72,
+                        78
+                      ]
+                    },
+                    "unit": {
+                      "type": "string",
+                      "enum": [
+                        "celsius"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "unit"
+                  ]
+                },
+                "duration": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "temp",
+                "duration"
+              ]
+            }
+          },
+          "fermentation": {
+            "type": "object",
+            "properties": {
+              "temp": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "integer",
+                    "enum": [
+                      11,
+                      13,
+                      14,
+                      15,
+                      10,
+                      22,
+                      19,
+                      20,
+                      18,
+                      21,
+                      25
+                    ]
+                  },
+                  "unit": {
+                    "type": "string",
+                    "enum": [
+                      "celsius"
+                    ]
+                  }
+                },
+                "required": [
+                  "value",
+                  "unit"
+                ]
+              }
+            },
+            "required": [
+              "temp"
+            ]
+          },
+          "twist": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "required": [
+          "mash_temp",
+          "fermentation",
+          "twist"
+        ]
+      },
+      "ingredients": {
+        "type": "object",
+        "properties": {
+          "malt": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "enum": [
+                    "Brown",
+                    "Peated Malt",
+                    "Crystal",
+                    "Acidulated Malt",
+                    "Maris Otter Extra Pale",
+                    "Extra Pale",
+                    "Wheat",
+                    "Caramalt",
+                    "Munich",
+                    "Amber",
+                    "Crystal 120",
+                    "Flaked Oats",
+                    "Dark Crystal",
+                    "Carafa Special Malt Type 1",
+                    "Carafa Special Malt Type 3",
+                    "Honey",
+                    "Extra Pale - Spring Blend",
+                    "Crystal 150",
+                    "Chocolate",
+                    "Rye",
+                    "Pale Crystal",
+                    "Weyermann Beech Smoked",
+                    "Propino Pale Malt",
+                    "Wheat Malt",
+                    "Propino Pale Malt for kettle souring",
+                    "Acidulated Malt for kettle souring"
+                  ]
+                },
+                "amount": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": [
+                        "number",
+                        "integer"
+                      ]
+                    },
+                    "unit": {
+                      "type": "string",
+                      "enum": [
+                        "kilograms"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "unit"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "amount"
+              ]
+            }
+          },
+          "hops": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "enum": [
+                    "Saaz",
+                    "Hersbrucker",
+                    "Magnum",
+                    "Tomahawk",
+                    "Peppercorns",
+                    "Waimea",
+                    "Amarillo",
+                    "Nelson Sauvin",
+                    "Motueka",
+                    "Simcoe",
+                    "Citra",
+                    "Ahtanum",
+                    "Chinook",
+                    "Crystal",
+                    "Centennial",
+                    "First Gold",
+                    "Sorachi Ace",
+                    "Cascade",
+                    "Fuggles",
+                    "Coffee",
+                    "HBC 369",
+                    "Dana",
+                    "Columbus",
+                    "Willamette",
+                    "Hallertauer Mittelfrüh",
+                    "Bramling Cross",
+                    "Columbus Extract",
+                    "Kohatu",
+                    "Blackberry Concentrate",
+                    "Sour Cherry Puree",
+                    "Mosaic"
+                  ]
+                },
+                "amount": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": [
+                        "number",
+                        "integer"
+                      ]
+                    },
+                    "unit": {
+                      "type": "string",
+                      "enum": [
+                        "grams"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "unit"
+                  ]
+                },
+                "add": {
+                  "type": "string",
+                  "enum": [
+                    "start",
+                    "middle",
+                    "end",
+                    "15",
+                    "0",
+                    "dry hop"
+                  ]
+                },
+                "attribute": {
+                  "type": "string",
+                  "enum": [
+                    "bitter",
+                    "flavour",
+                    "twist",
+                    " aroma",
+                    "aroma"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "amount",
+                "add",
+                "attribute"
+              ]
+            }
+          },
+          "yeast": {
+            "type": "string",
+            "enum": [
+              "Wyeast 2007 - Pilsen Lager™",
+              "Wyeast 3711 - French Saison™",
+              "Wyeast 3638 - Bavarian Wheat™",
+              "Wyeast 1056 - American Ale™",
+              "Wyeast 3522 - Belgian Ardennes™",
+              "Wyeast 1272 - American Ale II™",
+              "WLP500 - Monastery Ale",
+              "Saflager S189"
+            ]
+          }
+        },
+        "required": [
+          "malt",
+          "hops",
+          "yeast"
+        ]
+      },
+      "food_pairing": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "brewers_tips": {
+        "type": "string"
+      },
+      "contributed_by": {
+        "type": "string",
+        "enum": [
+          "Sam Mason <samjbmason>",
+          "Matt Ball <GeordieMatt>",
+          "Ali Skinner <AliSkinner>"
+        ]
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "tagline",
+      "first_brewed",
+      "description",
+      "image_url",
+      "abv",
+      "ibu",
+      "target_fg",
+      "target_og",
+      "ebc",
+      "srm",
+      "ph",
+      "attenuation_level",
+      "volume",
+      "boil_volume",
+      "method",
+      "ingredients",
+      "food_pairing",
+      "brewers_tips",
+      "contributed_by"
+    ]
+  }
+}
